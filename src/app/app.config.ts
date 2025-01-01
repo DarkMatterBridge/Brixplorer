@@ -3,6 +3,9 @@ import {provideRouter} from '@angular/router';
 
 import {routes} from './app.routes';
 import Aura from '@primeng/themes/aura';
+import Nora from '@primeng/themes/nora';
+import Lara from '@primeng/themes/lara';
+import Material from '@primeng/themes/material';
 
 
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
@@ -13,7 +16,10 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: Aura
+        preset: Nora,
+        options: {
+          darkModeSelector: '.my-app-dark'
+        }
       }
     })
   ]
