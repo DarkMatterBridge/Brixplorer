@@ -1,0 +1,12 @@
+
+
+<p-card header="Bridge System">
+  <p class="m-0">
+    Save model automatically to local storage:
+    <p-checkbox [(ngModel)]="automaticSaving" [binary]="true" />
+  </p>
+  <p class="m-0" >
+    Saving Intervalls in Seconds:
+    <p-input-number size="small" [maxlength]="4" inputId="integeronly" [(ngModel)]="savingIntervalInSeconds" [disabled]="!automaticSaving" />
+  </p>
+</p-card>

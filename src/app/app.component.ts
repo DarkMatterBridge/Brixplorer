@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, RouterOutlet} from '@angular/router';
 import {Menubar} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
 
@@ -10,9 +10,10 @@ import {MenuItem} from 'primeng/api';
   standalone: true,
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit  {
   title = 'Brixplorer';
 
+  constructor(private router: Router) {}
 
   items: MenuItem[] | undefined;
 
@@ -20,11 +21,19 @@ export class AppComponent {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        route: 'configuration'
       },
       {
         label: 'Features',
-        icon: 'pi pi-star'
+        icon: 'pi pi-star',
+      },
+      {
+        label: 'Bidding-System',
+        icon: 'pi pi-calculator',
+        command: () => {
+          this.router.navigate(['/biddingSystem']);
+        }
       },
       {
         label: 'Projects',
@@ -59,8 +68,12 @@ export class AppComponent {
         ]
       },
       {
-        label: 'Contact',
-        icon: 'pi pi-envelope'
+        label: 'Configuration',
+        icon: 'pi pi-cog',
+        command: () => {
+          this.router.navigate(['/configuration']);
+        }
+
       }
     ]
   }
