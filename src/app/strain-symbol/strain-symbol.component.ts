@@ -28,7 +28,6 @@ export class StrainSymbolComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.level = '';
-    alert("this.suitNo: " + this.suitNo)
     if (this.suitNo >= 0) {
       this.handleSuitNo(this.suitNo);
     }

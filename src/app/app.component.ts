@@ -43,6 +43,13 @@ export class AppComponent implements OnInit  {
         }
       },
       {
+        label: 'Board Storage',
+        icon: 'pi pi-database',
+        command: () => {
+          this.router.navigate(['/boardsStorage']);
+        }
+      },
+      {
         label: 'Projects',
         icon: 'pi pi-search',
         items: [

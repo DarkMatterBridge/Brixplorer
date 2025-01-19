@@ -1,0 +1,6 @@
+<div *ngFor="let k of ks" (click)="getDeal(k)" style="cursor:pointer">
+  {{k}}
+</div>
+
+
+<app-deal [deal]="deal" *ngIf="deal" ></app-deal>

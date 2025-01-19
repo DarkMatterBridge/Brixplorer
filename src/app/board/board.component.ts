@@ -43,4 +43,9 @@ export class BoardComponent {
     this.deal.shuffleExcept2(1,3)
     this.deal = Deal.getDeal(this.deal) // for change detection
   }
+
+
+  saveBoard() {
+    this.deal.save()
+  }
 }

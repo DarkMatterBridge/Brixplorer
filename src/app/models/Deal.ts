@@ -152,4 +152,9 @@ export class Deal {
     });
   }
 
+  save() {
+    localStorage.setItem((new Date()).toString(), JSON.stringify(this));
+  }
+
+
 }

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Deal} from '../models/Deal';
-import {DealConverter} from '../deal-converter';
+import {DealConverter} from '../Service/deal-converter';
 import {HandComponent} from '../hand/hand.component';
 
 @Component({
