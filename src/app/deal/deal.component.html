@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <td>
+      <div class="board">
+        <table>
+          <tr>
+            <td>
+            </td>
+            <td>{{players[2]}}
+              <app-hand [cards]="cards[2]"></app-hand>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>{{players[1]}}
+              <app-hand [cards]="cards[1]"></app-hand>
+            </td>
+            <td></td>
+            <td>{{players[3]}}
+              <app-hand [cards]="cards[3]"></app-hand>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{players[0]}}
+              <app-hand [cards]="cards[0]"></app-hand>
+            </td>
+<!--            <td>-->
+<!--              <app-double-dummy-tricks [deal]="deal" ></app-double-dummy-tricks>-->
+<!--            </td>-->
+          </tr>
+        </table>
+      </div>
+    </td>
+  <tr>
+  </tr>
+</table>

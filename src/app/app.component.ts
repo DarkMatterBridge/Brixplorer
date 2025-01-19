@@ -36,6 +36,13 @@ export class AppComponent implements OnInit  {
         }
       },
       {
+        label: 'Board Dealer',
+        icon: 'pi pi-microsoft',
+        command: () => {
+          this.router.navigate(['/boardDealer']);
+        }
+      },
+      {
         label: 'Projects',
         icon: 'pi pi-search',
         items: [
