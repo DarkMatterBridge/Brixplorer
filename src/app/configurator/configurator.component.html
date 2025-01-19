@@ -1,12 +1,29 @@
-
-
 <p-card header="Bridge System">
   <p class="m-0">
     Save model automatically to local storage:
-    <p-checkbox [(ngModel)]="automaticSaving" [binary]="true" />
+    <p-checkbox [(ngModel)]="configuration.automaticSaving" [binary]="true" (ngModelChange)="changed($event)"/>
   </p>
-  <p class="m-0" >
-    Saving Intervalls in Seconds:
-    <p-input-number size="small" [maxlength]="4" inputId="integeronly" [(ngModel)]="savingIntervalInSeconds" [disabled]="!automaticSaving" />
+  <p class="m-0">
+    Saving Interval in Seconds:
+    <p-input-number size="small" [maxlength]="4" inputId="integeronly"
+                    [(ngModel)]="configuration.savingIntervalInSeconds"
+                    (ngModelChange)="changed($event)" [disabled]="!configuration.automaticSaving"/>
   </p>
 </p-card>
+
+
+<p-card header="Shuffling">
+  <p class="m-0">
+    Use Web-Worker for shuffling:
+    <p-checkbox [(ngModel)]="configuration.shufflingUseWebWorker" [binary]="true" (ngModelChange)="changed($event)"/>
+  </p>
+  <p class="m-0">
+    Maximum number of shuffles before stopping:
+    <p-input-number size="small" [maxlength]="8" inputId="integeronly"
+                    [(ngModel)]="configuration.maximumNumberOfAttempts"
+                    (ngModelChange)="changed($event)"/>
+  </p>
+</p-card>
+
+<p-button *ngIf="hasChanged" label="Save" (click)="save()"/>
+
