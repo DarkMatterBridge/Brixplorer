@@ -41,7 +41,7 @@ export class Deal {
   }
 
   shuffleAll() {  // previous shuffle1Hand
-    this.doShuffle(52)
+    this.doShuffle(0)
   }
 
   shuffleExcept(i: number) {  // i = 0, 1, 2, 3
@@ -52,10 +52,10 @@ export class Deal {
 
   shuffleExcept2(i: number, j:number) {  // i = 0, 1, 2, 3
     this.swap(0, i)
-    this.swap(0, j)
+    this.swap(1, j)
     this.doShuffle(26)
+    this.swap(1, j)
     this.swap(0, i)
-    this.swap(0, j)
   }
 
   swap(low: number, high: number) {

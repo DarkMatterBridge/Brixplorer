@@ -5,4 +5,16 @@ Board
 
 
   </div>
+
+
+  <button (click)="shuffle()" [disabled]="!isShufflePossible()"> Shuffle
+  </button>
+
+
+<button (click)="shuffleAllButWest()" [disabled]="!isShufflePossible()"> Shuffle all but West
+  </button>
+
+<button (click)="shuffleAllButWestEast()" [disabled]="!isShufflePossible()"> Shuffle all but West/East
+  </button>
+
 </div>
