@@ -5,7 +5,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import {FormsModule} from '@angular/forms';
 import {ConfigurationService} from '../configuration.service';
-import {Configuration} from './models/Configuration';
+import {Configuration} from '../models/Configuration';
 import {NgIf} from '@angular/common';
 
 @Component({
