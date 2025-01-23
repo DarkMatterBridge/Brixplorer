@@ -17,8 +17,9 @@ import {DealComponent} from '../deal/deal.component';
 })
 export class BoardsStorageComponent {
 
-   ks = new Array<string>();
-   deal: Deal|undefined;
+  ks = new Array<string>();
+  deal: Deal | undefined;
+  currentKay: string = '';
 
   constructor() {
     this.getAllBoardsFromStorage();
@@ -26,16 +27,17 @@ export class BoardsStorageComponent {
 
   getAllBoardsFromStorage() {
 
-
+    this.ks = new Array<string>();
     for (var key in localStorage) {
       console.log(key)
-      if (key.includes('Sun')) {
+      if (key.includes('GMT')) {
         this.ks.push(key);
       }
     }
   }
 
   getDeal(key: string): Deal | undefined {
+    this.currentKay = key;
     const json = localStorage.getItem(key)
     if (json) {
       let x = JSON.parse(json) as Deal;
@@ -46,5 +48,9 @@ export class BoardsStorageComponent {
     return undefined
   }
 
-
+  deleteDeal() {
+    localStorage.removeItem(this.currentKay);
+    this.getAllBoardsFromStorage();
+  }
 }
+
